@@ -1,7 +1,7 @@
 {
-  "name": "hello",
+  "name": "dummy-node",
   "version": "1.0.0",
-  "description": "Projet d'aide aux entretiens pour le casting de nouveaux membres",
+  "description": "Projet de test",
   "scripts": {
     "postinstall": "bower update",
     "test": "gulp test",
@@ -13,17 +13,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://git-webdev.ib.fr.cly:7000/summary/fwk%2Fhello.git"
+    "url": "https://github.com/dozoops/dummy-node.git"
   },
-  "bugs": {
-    "url": "http://redmine.ib.fr.cly/projects/framework/issues",
-    "email": "christophe.dieudonne@lcl.fr"
-  },
-  "author": "Jérémy PASTOR <jeremy.pastor@lcl.fr>",
+  "author": "Bob KELSO <dozoops@gmail.com>",
   "contributors": [
     {
-      "name": "Jérémy PASTOR",
-      "email": "jeremy.pastor@lcl.fr"
+      "name": "Bob KELSO",
+      "email": "dozoops@gmail.com"
     }
   ],
   "devDependencies": {
