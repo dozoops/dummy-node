@@ -1,0 +1,14 @@
+<div id="ticket-{{issue.id}}" class="card-panel blue-text text-darken-4 {{settings.postItMode()}} {{settings.editBtn()}} {{settings.stackMode()}} issue-{{priority(issue.priority.name)}}" >
+    <span class="card-head {{color(issue.status.id)}} {{contraste(issue.tracker.id)}}">
+    	<span class="tracker-id" ng-click="link(issue.id)">#{{issue.id}}</span>
+    	<span ng-if="settings.data.issue.showTracker">{{tracker(issue.tracker.id)}} {{issue.status.name}}</span>
+    	<span class="spent-time">{{issue.spent_time}}h</span>
+    	<span class="done-ratio">{{issue.done_ratio}}%</span>
+    </span>
+    <span class="{{showUS(issue)}} description">{{issue.subject}}</span>
+    <a ng-if="settings.data.issue.edit" class="btn-floating waves-effect waves-light red" ng-class="expanded === issue.id ? 'disabled' : 'red'" ng-click="expand(issue)"><i class="mdi-editor-mode-edit"></i></a>
+    <span class="estimated-hours" ng-if="settings.data.issue.estimated_hours && !Utils.empty(issue.estimated_hours)">{{issue.estimated_hours}}h</span>
+    <span class="priority {{priority(issue.priority.name)}}" ng-if="settings.data.issue.priority">{{issue.priority.name}}</span>
+    <span class="story-points" ng-if="issue.tracker.id === 55001">{{issue.story_points}}</span>
+    <issue-form></issue-form>
+</div>

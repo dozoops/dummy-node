@@ -1,0 +1,37 @@
+<div ng-controller="TaskboardController">
+    <table class="bordered" id="taskboard-wrapper" ng-show="scrolling">
+        <thead>
+            <tr>
+                <th data-field="name"></th>
+                <th data-field="new">New</th>
+                <th data-field="in-progress">In progress</th>
+                <th data-field="done">Done</th>
+            </tr>
+        </thead>
+    </table>
+
+    <table class="bordered" id="taskboard">
+        <thead ng-hide="scrolling">
+            <tr>
+                <th data-field="name"></th>
+                <th data-field="new">New</th>
+                <th data-field="in-progress">In progress</th>
+                <th data-field="done">Done</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="assigned_to_{{user.id_assigned_to}}" data-issue-assigned_to="{{user.id_assigned_to}}" ng-repeat="user in taskboard">
+                <th>{{user.name_assigned_to}}</th>
+                <td class="new">
+                    <issue ng-repeat="issue in user.new_issues"></issue>
+                </td>
+                <td class="in-progress">
+                    <issue ng-repeat="issue in user.inprogress_issues"></issue>
+                </td>
+                <td class="done">
+                    <issue ng-repeat="issue in user.done_issues"></issue>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

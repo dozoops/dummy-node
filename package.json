@@ -1,0 +1,67 @@
+{
+  "name": "hello",
+  "version": "1.0.0",
+  "description": "Projet d'aide aux entretiens pour le casting de nouveaux membres",
+  "scripts": {
+    "postinstall": "bower update",
+    "test": "gulp test",
+    "test-e2e": "gulp test-e2e",
+    "test-unit": "gulp test-unit",
+    "start": "gulp",
+    "dist": "gulp dist",
+    "jenkins": "npm install && bower install && gulp test --env=PROD"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://git-webdev.ib.fr.cly:7000/summary/fwk%2Fhello.git"
+  },
+  "bugs": {
+    "url": "http://redmine.ib.fr.cly/projects/framework/issues",
+    "email": "christophe.dieudonne@lcl.fr"
+  },
+  "author": "Jérémy PASTOR <jeremy.pastor@lcl.fr>",
+  "contributors": [
+    {
+      "name": "Jérémy PASTOR",
+      "email": "jeremy.pastor@lcl.fr"
+    }
+  ],
+  "devDependencies": {
+    "bower": "^1.4.1",
+    "combined-stream": "0.0.7",
+    "del": "~1.1.1",
+    "depd": "^1.0.1",
+    "event-stream": "~3.3.0",
+    "gulp": "^3.8.11",
+    "gulp-angular-filesort": "~1.1.1",
+    "gulp-concat": "~2.5.2",
+    "gulp-connect": "^2.2.0",
+    "gulp-if": "~1.2.5",
+    "gulp-inject": "~1.2.0",
+    "gulp-jshint": "~1.9.2",
+    "gulp-jshint-xml-file-reporter": "~0.3.3",
+    "gulp-less": "~3.0.1",
+    "gulp-minify-css": "~0.5.1",
+    "gulp-protractor": "~0.0.12",
+    "gulp-rev": "~3.0.1",
+    "gulp-sftp": "^0.1.4",
+    "gulp-sourcemaps": "^1.5.1",
+    "gulp-uglify": "~1.1.0",
+    "gulp-util": "^3.0.4",
+    "htmlparser2": "^3.8.2",
+    "jasmine-core": "~2.2.0",
+    "jasmine-reporters": "~2.0.4",
+    "karma": "~0.12.31",
+    "karma-chrome-launcher": "~0.1.7",
+    "karma-coverage": "~0.2.7",
+    "karma-firefox-launcher": "~0.1",
+    "karma-jasmine": "~0.3.5",
+    "karma-junit-reporter": "~0.2.2",
+    "karma-sourcemap-loader": "~0.3.4",
+    "main-bower-files": "^2.6.2",
+    "minimist": "~1.1.1",
+    "protractor": "~1.7.0",
+    "run-sequence": "^1.0.2",
+    "webdriver-manager": "~2.0.0"
+  }
+}

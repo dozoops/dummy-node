@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="hello">
+
+<head>
+    <meta charset="utf-8" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Scrum Taskboard</title>
+    <!-- inject:css -->
+    <!-- endinject -->
+</head>
+
+<body ng-cloak>
+
+    <nav ng-controller="MenuController">
+
+        <ul id="dropdown-project" class="dropdown-content project">
+            <li class="load-project" ng-repeat="project in projects | orderBy:'name'" ng-click="loadVersions(project)"><a class="blue-text">{{project.name}}</a></li>
+        </ul>
+        <ul id="dropdown-project-mobile" class="dropdown-content project">
+            <li class="load-project" ng-repeat="project in projects | orderBy:'name'" ng-click="loadVersions(project)"><a class="blue-text">{{project.name}}</a></li>
+        </ul>
+        <ul id="dropdown-version" class="dropdown-content version">
+            <li class="load-version" ng-repeat="version in versions | orderBy:'name'" ng-click="loadIssues(version)"><a class="blue-text">{{version.name}}</a></li>
+        </ul>
+        <ul id="dropdown-version-mobile" class="dropdown-content version">
+            <li class="load-version" ng-repeat="version in versions | orderBy:'name'" ng-click="loadIssues(version)"><a class="blue-text">{{version.name}}</a></li>
+        </ul>
+
+        <div class="nav-wrapper blue darken-4">
+            <a href="#" class="brand-logo right">Hello you !</a>
+            <a href="#" data-activates="mobile-menu" class="btn-collapse"><i class="mdi-navigation-menu"></i></a>
+
+            <ul class="left hide-on-med-and-down">
+                <li ng-hide="utils.empty(projects)">
+                    <a class="dropdown-button project" data-activates="dropdown-project"><span class="dropdown-title project">{{projectsButtonLabel}}</span><i class="mdi-navigation-arrow-drop-down right"></i></a>
+                </li>
+                <li ng-hide="utils.empty(versions)">
+                    <a class="dropdown-button version" data-activates="dropdown-version"><span class="dropdown-title version">{{versionsButtonLabel}}</span><i class="mdi-navigation-arrow-drop-down right"></i></a>
+                </li>
+                <!-- <li ng-hide="utils.empty(versions)" ng-click="loadBugs(project)">
+                    <a><span>Bugs</span></a>
+                </li> -->
+                <li class="refresh tooltipped" ng-show="issuesLoaded" ng-click="refresh()" data-position="bottom" data-delay="50" data-tooltip="Refresh">
+                    <a><i class="mdi-navigation-refresh"></i></a>
+                </li>
+                <li class="jenkins tooltipped" ng-show="showJenkins" ng-click="jenkins()" data-position="bottom" data-delay="50" data-tooltip="Jenkins">
+                    <a><i class="mdi-action-dashboard left"></i></a>
+                </li>
+            </ul>
+
+            <ul id="mobile-menu" class="side-nav">
+                <li ng-hide="utils.empty(projects)">
+                    <a class="dropdown-button project" data-activates="dropdown-project-mobile"><span class="dropdown-title project">{{projectsButtonLabel}}</span><i class="mdi-navigation-arrow-drop-down right"></i></a>
+                </li>
+                <li ng-hide="utils.empty(versions)">
+                    <a class="dropdown-button version" data-activates="dropdown-version-mobile"><span class="dropdown-title version">{{versionsButtonLabel}}</span><i class="mdi-navigation-arrow-drop-down right"></i></a>
+                </li>
+                <!-- <li ng-hide="utils.empty(versions)" ng-click="loadBugs(project)">
+                    <a><span>Bugs</span></a>
+                </li> -->
+                <li class="refresh" ng-show="issuesLoaded" ng-click="refresh()">
+                    <a><i class="mdi-navigation-refresh left"></i><span>Refresh taskboard</span></a>
+                </li>
+                <li class="jenkins" ng-show="showJenkins" ng-click="jenkins()">
+                    <a><i class="mdi-action-dashboard left"></i><span>Jenkins</span></a>
+                </li>
+                <li class="settings" ng-click="settings()">
+                    <a><i class="mdi-action-settings left"></i><span>Settings</span></a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+    
+    <main ng-view></main>
+    <!-- inject:js -->
+    <!-- endinject -->
+</body>
+
+</html>
